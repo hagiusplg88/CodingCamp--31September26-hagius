@@ -1,14 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List Life Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
+  <div class="dashboard-container">
     
-</body>
+    <!-- Top Bar: Theme Toggle & Custom Name -->
+    <header class="top-bar">
+      <div class="user-name-container">
+        <label for="username-input">Nama Anda:</label>
+        <input type="text" id="username-input" placeholder="Masukkan nama..." />
+      </div>
+      <button id="theme-toggle-btn" class="btn-secondary">🌙 Dark Mode</button>
+    </header>
 
+    <!-- Greeting Section -->
+    <section class="greeting-section">
+      <h1 id="greeting-text">Selamat Pagi!</h1>
+      <p id="clock-text">00:00:00</p>
+      <p id="date-text">Senin, 1 Januari 2026</p>
+    </section>
+
+    <!-- Main Grid Layout -->
+    <main class="dashboard-grid">
+      
+      <!-- Focus Timer (Pomodoro) -->
+      <section class="card focus-timer-card">
+        <h2>⏱️ Focus Timer</h2>
+        <div class="timer-display" id="timer-display">25:00</div>
+        <div class="timer-controls">
+          <button id="start-timer-btn" class="btn-primary">Start</button>
+          <button id="stop-timer-btn" class="btn-warning">Stop</button>
+          <button id="reset-timer-btn" class="btn-danger">Reset</button>
+        </div>
+      </section>
+
+      <!-- Quick Links Section -->
+      <section class="card quick-links-card">
+        <h2>🔗 Quick Links</h2>
+        <form id="add-link-form">
+          <input type="text" id="link-title-input" placeholder="Nama Website (misal: Google)" required>
+          <input type="url" id="link-url-input" placeholder="URL (https://...)" required>
+          <button type="submit" class="btn-primary">Tambah Link</button>
+        </form>
+        <ul id="quick-links-list" class="links-list"></ul>
+      </section>
+
+      <!-- To-Do List Section -->
+      <section class="card todo-card">
+        <h2>📋 To-Do List</h2>
+        <form id="add-todo-form">
+          <input type="text" id="todo-input" placeholder="Tambah tugas baru..." required>
+          <button type="submit" class="btn-primary">Tambah</button>
+        </form>
+        <p id="todo-error-msg" class="error-text"></p>
+        <ul id="todo-list" class="todo-list"></ul>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
 </html>
